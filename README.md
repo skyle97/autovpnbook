@@ -1,5 +1,5 @@
 ## Step 1: ##
-Download Euro1 Server OpenVPN Certificate Bundle
+Download **all** Server OpenVPN Certificate Bundle
 
 Usage: 
 ```
