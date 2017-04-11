@@ -32,4 +32,4 @@ sudo ./autovpnbook.py <vpnbok-file-proto.ovpn>
 
 ##### Disclaimer: ######
 
-###### Theses scripts were written for educational purposes only!  I assume not responsibility by the use or intended use of theses scripts. ######
+###### Theses scripts is written for educational purposes only!  I assume not responsibility by the use or intended use of theses scripts. ######
