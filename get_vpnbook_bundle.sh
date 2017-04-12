@@ -10,7 +10,7 @@ cleanup() {
 
 trap cleanup Exit
 
-dln_cert_bundle() {
+dwnld_cert_bundle() {
   wget -r -l1 -H -t1 -nd -N -np -A.zip -erobots=off \
   http://www.vpnbook.com/#openvpn
   return $?
