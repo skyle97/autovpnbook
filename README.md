@@ -23,7 +23,7 @@ Usage:
 ```
 #!python
 
-sudo ./autovpnbook.py <vpnbok-file-proto.ovpn>
+sudo ./autovpnbook.py <vpnbook-file-proto.ovpn>
 ```
 
 
