@@ -1,5 +1,6 @@
 #! /bin/bash
-#
+# 
+# Written by Rupe
 # Get vpnbook OpenVpn Certificate Bundle
 #
 
@@ -9,12 +10,31 @@ cleanup() {
 
 trap cleanup Exit
 
-wget -r -l1 -H -t1 -nd -N -np -A.zip -erobots=off \
-http://www.vpnbook.com/#openvpn && \
+dln_cert_bundle() {
+  wget -r -l1 -H -t1 -nd -N -np -A.zip -erobots=off \
+  http://www.vpnbook.com/#openvpn
+  return $?
+}
 
-for bundle in $(ls VPN*.zip)
-do
-  unzip $bundle
-done
+unpack_bundle() {
+  for bundle in $(ls VPN*.zip)
+  do
+    unzip $bundle
+  done
+  return $?
+  
+}
+
+auth_nocache() {
+  for ovpn in $(ls *.ovpn)
+  do
+    sed -i '3i auth-nocache' $ovpn
+  done
+  return $?
+}
+
+dln_cert_bundle && \
+unpack_bundle && \
+auth_nocache
 
 exit $?
