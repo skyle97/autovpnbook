@@ -32,7 +32,7 @@ auth_nocache() {
   return $?
 }
 
-dln_cert_bundle && \
+dwnld_cert_bundle && \
 unpack_bundle && \
 auth_nocache
 
