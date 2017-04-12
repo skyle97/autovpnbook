@@ -22,7 +22,6 @@ unpack_bundle() {
     unzip $bundle
   done
   return $?
-  
 }
 
 auth_nocache() {
