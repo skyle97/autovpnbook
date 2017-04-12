@@ -3,9 +3,7 @@ openvpn pexpect
 ```
 #!bash
 
-sudo apt-get -y install openvpn
-
-sudo pip install pexpect
+sudo apt-get -y install openvpn python-pexpect
 ```
 
 
