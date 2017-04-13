@@ -27,7 +27,7 @@ unpack_bundle() {
 auth_nocache() {
   for ovpn in $(ls *.ovpn)
   do
-    sed -i '3i auth-nocache' $ovpn
+    sed -i '11i auth-nocache' $ovpn
   done
   return $?
 }
