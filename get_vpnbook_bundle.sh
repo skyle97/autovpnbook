@@ -2,6 +2,7 @@
 # 
 # Written by Rupe
 # Get vpnbook OpenVpn Certificate Bundle
+# from vpnbook.com  v.1.0
 #
 
 cleanup() {
