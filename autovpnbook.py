@@ -1,6 +1,6 @@
 #! /usr/bin/env python
 #
-# Autovpnbook Written by Rupe 4-10-17
+# Autovpnbook Written by Rupe 4-10-17 v.1.0
 #
 
 from contextlib import closing
