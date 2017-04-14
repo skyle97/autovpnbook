@@ -14,6 +14,7 @@ import pexpect
 def get_password():
   request = urlopen('http://www.vpnbook.com/#openvpn')
   html = request.read().split()
+  request.close()
   passwd = html.index('<li><strong>Password:') + 1
   Password = html[passwd].split('<')[0]
   return Password
