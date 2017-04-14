@@ -3,6 +3,7 @@
 # Autovpnbook Written by Rupe 4-10-17
 #
 
+import contextlib
 from os import geteuid
 from os.path import basename
 from sys import argv
@@ -12,11 +13,11 @@ import pexpect
 
 
 def get_password():
-  request = urlopen('http://www.vpnbook.com/#openvpn')
-  html = request.read().split()
-  request.close()
-  passwd = html.index('<li><strong>Password:') + 1
-  Password = html[passwd].split('<')[0]
+  with contextlib.closing(urlopen(
+      'http://www.vpnbook.com/#openvpn')) as request:
+    html = request.read().split()
+    passwd = html.index('<li><strong>Password:') + 1
+    Password = html[passwd].split('<')[0]
   return Password
 
 
