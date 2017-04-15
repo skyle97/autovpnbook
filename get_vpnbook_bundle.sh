@@ -42,7 +42,7 @@ get_username() {
 
 get_password() {
   curl -s "http://www.vpnbook.com/#openvpn" \
-  | grep -A 1 "Password:" |tail -n 2 |cut -d ':' -f2 \
+  | grep -A 1 "Password:" | tail -n 2 | cut -d ':' -f2 \
   | cut -d '<' -f1 | tr -d ' ' > password.txt
   return $?
 }
