@@ -1,6 +1,6 @@
 #! /usr/bin/env python
 #
-# Autovpnbook Written by Rupe 4-10-17 v.1.0
+# Autovpnbook Written by Rupe 4-10-17 V.1.0
 #
 
 from contextlib import closing
@@ -16,6 +16,11 @@ class AutoVpnBook(object):
 
   def __init__(self):
     self.Password = self.get_password()
+    self.passwd_file()
+
+  def passwd_file(self):
+    with open('password.txt', 'w') as passwd:
+      passwd.write(self.Password + '\n')
 
   def get_password(self):
     with closing(urlopen('http://www.vpnbook.com/#openvpn')) as request:
