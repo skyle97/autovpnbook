@@ -1,5 +1,5 @@
 #! /bin/bash
-# 
+#
 # Written by Rupe
 # Get vpnbook OpenVpn Certificate Bundle
 # from vpnbook.com  v.1.0
@@ -33,8 +33,16 @@ auth_nocache() {
   return $?
 }
 
+get_username() {
+  curl -s "http://www.vpnbook.com/#openvpn" \
+  | grep -A 1 "Username: vpnbook" | tail -n 2 \
+  | cut -f2 -d " " | cut -f1 -d '<' > username.txt
+  return $?
+}
+
 dwnld_cert_bundle && \
 unpack_bundle && \
-auth_nocache
+auth_nocache && \
+get_username
 
 exit $?
