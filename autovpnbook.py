@@ -20,7 +20,7 @@ class AutoVpnBook(object):
 
   def save_passwd_file(self):
     with open('password.txt', 'w') as passwd_file:
-      passwd_file.write(self.Password + '\n')
+      passwd_file.write(self.Password + '\n\n')
 
   def get_password(self):
     with closing(urlopen('http://www.vpnbook.com/#openvpn')) as request:
