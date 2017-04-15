@@ -40,9 +40,17 @@ get_username() {
   return $?
 }
 
+get_password() {
+  curl -s "http://www.vpnbook.com/#openvpn" \
+  | grep -A 1 "Password:" |tail -n 2 |cut -d ':' -f2 \
+  | cut -d '<' -f1 > password.txt
+  return $?
+}
+
 dwnld_cert_bundle && \
 unpack_bundle && \
 auth_nocache && \
-get_username
+get_username && \
+get_password
 
 exit $?
