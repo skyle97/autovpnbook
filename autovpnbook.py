@@ -15,8 +15,14 @@ import pexpect
 class AutoVpnBook(object):
 
   def __init__(self):
+    self.Username = "vpnbook"
+    self.save_username_file()
     self.Password = self.get_password()
     self.save_passwd_file()
+
+  def save_username_file(self):
+    with open('username.txt', 'w') as username_file:
+      username_file.write(self.Username + '\n\n')
 
   def save_passwd_file(self):
     with open('password.txt', 'w') as passwd_file:
@@ -32,7 +38,7 @@ class AutoVpnBook(object):
   def auto_login(self, ovpn):
     openvpnbook = pexpect.spawn('openvpn --config %s' % ''.join(ovpn))
     openvpnbook.expect('Enter Auth Username:')
-    openvpnbook.sendline('vpnbook')
+    openvpnbook.sendline(self.Username)
     openvpnbook.expect('Enter Auth Password:')
     openvpnbook.sendline(self.Password)
     openvpnbook.interact()
