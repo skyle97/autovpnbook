@@ -8,7 +8,9 @@ sudo apt-get -y install openvpn python-pexpect
 
 
 ## Step 1: ##
-Download **all** Server OpenVPN Certificate Bundle
+1. Download autovpnbook repository and unzip
+
+2. Download **All** Server OpenVPN Certificate Bundle
 
 Usage: 
 ```
