@@ -16,11 +16,11 @@ class AutoVpnBook(object):
 
   def __init__(self):
     self.Password = self.get_password()
-    self.passwd_file()
+    self.save_passwd_file()
 
-  def passwd_file(self):
-    with open('password.txt', 'w') as passwd:
-      passwd.write(self.Password + '\n')
+  def save_passwd_file(self):
+    with open('password.txt', 'w') as passwd_file:
+      passwd_file.write(self.Password + '\n')
 
   def get_password(self):
     with closing(urlopen('http://www.vpnbook.com/#openvpn')) as request:
