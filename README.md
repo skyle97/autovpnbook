@@ -1,4 +1,7 @@
 # AUTOVPNBOOK #
+## Automatically Login And Connect To VPNBook ##
+***
+
 
 
 Dependencies:
@@ -28,7 +31,7 @@ Usage:
 
 
 ## Step 2: ##
-* Automatic login to vpnbook, no username or password required.
+* Automatic login to vpnbook. No username or password required.
 
 
 
