@@ -6,7 +6,7 @@
 #
 
 cleanup() {
-  rm VPN*.zip && rm $0 && clear; ls
+  rm VPN*.zip && rm $0 && clear; ls --color
 }
 
 trap cleanup Exit
