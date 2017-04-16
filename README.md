@@ -1,3 +1,6 @@
+# AUTOVPNBOOK #
+
+
 Dependencies:
 openvpn pexpect
 ```
@@ -25,6 +28,10 @@ Usage:
 
 
 ## Step 2: ##
+* Automatic login to vpnbook, no username or password required.
+
+
+
 Usage: 
 ```
 #!python
