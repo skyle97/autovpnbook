@@ -16,11 +16,9 @@ sudo apt-get -y install openvpn python-pexpect
 ## Step 1: ##
 * Download [autovpnbook repository](https://bitbucket.org/ruped24/autovpnbook/get/c63671eccf45.zip) and unzip.
 
-* Download All [VPNBOOK](https://www.vpnbook.com/freevpn)'s Server OpenVPN Certificate Bundles.
+* Run **get_vpnbook_bundle.sh** to Download All [VPNBOOK](https://www.vpnbook.com/freevpn)'s Server OpenVPN Certificate Bundles.
  
-* Run get_vpnbook_bundle.sh.
  
-
 
 Usage: 
 ```
