@@ -6,7 +6,10 @@
 #
 
 cleanup() {
-  rm VPN*.zip && rm $0 && clear; ls --color
+  rm VPN*.zip && rm $0 && clear; echo -e \
+  "\033[1;32m$(date):  You have $(ls *.ovpn|wc -l) \
+OpenVPNBook Servers available.\033[0m\n"
+  ls --color
 }
 
 trap cleanup Exit
