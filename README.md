@@ -34,6 +34,6 @@ sudo ./autovpnbook.py <vpnbook-file-proto.ovpn>
 
 ##### Disclaimer: ######
 
-###### These scripts is written for educational purposes only!  I assume no responsibility by the use or intended use of these scripts. ######
+###### These scripts is written for educational purposes only!
 
 ** [Screenshot](https://drive.google.com/open?id=0B79r4wTVj-CZMlBhTnRwTUxUdDA) ** :wink:
