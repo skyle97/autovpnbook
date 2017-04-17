@@ -30,6 +30,7 @@ Usage:
 
 ## Step 2: ##
 * Automatic login to vpnbook. No username or password required.
+
 * To properly terminate a session, press Ctrl+C.
 
 
