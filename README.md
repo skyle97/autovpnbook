@@ -3,7 +3,7 @@
 ***
 
 ## Step 1: ##
-* Download [autovpnbook repository](https://bitbucket.org/ruped24/autovpnbook/get/ea2fe81cb221.zip) and unzip.
+* Download [autovpnbook repository](https://bitbucket.org/ruped24/autovpnbook/get/583cd8201359.zip) and unzip.
 
 * **get_vpnbook_bundle.sh** will download and setup All [VPNBOOK](https://www.vpnbook.com/freevpn)'s Server OpenVPN Certificate Bundles.
 
