@@ -5,9 +5,19 @@
 ## Step 1: ##
 * Download [autovpnbook repository](https://bitbucket.org/ruped24/autovpnbook/get/ef6d6d71b217.zip) and unzip.
 
-* Run **get_vpnbook_bundle.sh** to Download All [VPNBOOK](https://www.vpnbook.com/freevpn)'s Server OpenVPN Certificate Bundles.
- 
+* get_vpnbook_bundle.sh will download and setup All [VPNBOOK](https://www.vpnbook.com/freevpn)'s Server OpenVPN Certificate Bundles by running the command below.
+
+### Usage: ###
 * Setup and auto launches AutoVPNBook Menu.
+
+```
+#!bash
+
+./get_vpnbook_bundle.sh
+```
+
+ 
+
 
 
 ##### Disclaimer: ######
