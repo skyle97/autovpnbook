@@ -19,7 +19,6 @@ Y="\033[1;33m"
 EC="\033[0m"
 
 nar="   M E N U "
-Titre=" AutoVPNBook v1.0 "
 
 ###### CONFIG FIN #################################################################
 
@@ -39,16 +38,124 @@ function spinner {
 
   "
   sleep 0.5
-  echo -e " $R A$W""utoVPNBook 1.1$G By$Y Ruped24 & K0RT3X-R00T $W"
+  echo -e " 		$R A$W""utoVPNBook 1.1$G By$Y R$W""uped$Y""24$GR &$Y K$W""0RT3X-$Y""R$W""00T "
   sleep 5
-  main
+
+  setting
 
 }
 
 ############ SPINNER FIN #############################################################
 
 
-######## MAIN MENU ################################################################
+########### SET LANGUAGE ############################################################
+
+function setting {
+
+  conditional_clear
+
+  if [[ "$AVPNB_AUTO" =  "1" ]]
+  then
+    english; setinterface
+  else
+
+    while true
+    do
+      #conditional_clear
+      top
+
+      echo -e "" $R"["$Y"i"$R"]"$W" Select your language"
+      echo "                                       "
+      echo -e "
+        $G 1)$W English
+        $G 2)$W French
+        $G 3)$W Spanish "
+
+
+      echo
+      read -p" Choice: " choice
+      echo ""
+      case $choice in
+        1 ) english; main; break ;;
+        2 ) french; main; break;;
+        3 ) spanish; main; break;;
+        * ) echo -e "$W [$R ERROR $W]" && sleep 3 ;setting;;
+      esac
+    done
+  fi
+
+}
+
+function english {
+
+  START="S T A R T I N G  S E R V E R"
+  OFF=" Thank you for using AutoVPNBook"
+  CLOSE="$W C L O S I N G..."
+  error=" ERROR"
+  Fmissing="\nautovpnbook.py file is missing!"
+  SRVconnect="\nEnter vpnbook-srv-proto.ovpn file to connect"
+  Infoserv=" You have"
+  Infoserv2="OpenVPNBook Servers available."
+  Server=" Server"
+  Choice=" Choice"
+  ENTER="ENTER"
+  Exit="Exit "
+  Inst="Install"
+  Dep="Install dependencies, please wait"
+  Rvpn="Run AutoVPN"
+  INFOMSG=" Automatic connection (servers OpenVPN)"
+  Return="Return"
+
+}
+
+function french {
+
+  START="D E M A R R A G E  D U  S E R V E R"
+  OFF="Merci d'avoir utilisé AutoVPNBook"
+  CLOSE="$W F E R M E T U R E..."
+  error="ERREUR"
+  Fmissing="\nautovpnbook.py est absent!"
+  SRVconnect="\nEntrez un vpnbook-srv-proto.ovpn pour vous connecter"
+  Infoserv=" Vous avez"
+  Infoserv2="Serveurs OpenVPNBook disponibles."
+  Server="Serveur"
+  Choice=" Choix"
+  ENTER="ENTREE"
+  Exit="Fermer "
+  Inst="Installation"
+  Dep="Installation des dependences, merci de patienter"
+  Rvpn="Lancez AutoVPN"
+  INFOMSG=" Connexion automatique (servers OpenVPN)"
+  Return="Retour"
+
+}
+
+function spanish {
+
+  START="I J E C U T A R  E L  S E R V I D O R"
+  OFF="Gracias por usar AutoVPNBook"
+  CLOSE="$W C I E R R E..."
+  error="ERROR"
+  Fmissing="\nautovpnbook.py es absent!"
+  SRVconnect="\nInstroducir una vpnbook-srv-proto.ovpn para conectar"
+  Infoserv=" Usted tiene"
+  Infoserv2="Servidors OpenVPNBook disponible."
+  Server="Servidor"
+  Choice=" Seleccion"
+  ENTER="ENTRAR"
+  Exit="Cerrar "
+  Inst="Instalar"
+  Dep="Instalacion de dependencias, gracias por su paciencia"
+  Rvpn="Lanzamiento AutoVPN"
+  INFOMSG=" Automatic connection (servers OpenVPN)"
+  Return="Volver"
+
+}
+
+########### SET LANGUAGE END #######################################################
+
+
+######## MENU 1 MENU ################################################################
 
 function main {
 
@@ -60,18 +167,18 @@ function main {
 
   echo
   echo
-  echo -e "  $W$nar"
+  echo -e "  $W$nar "
   echo -e "
     $G 1)$W Info
     $G 2)$W Menu
-    $R 0)$W Exit "
+    $R 0)$W $Exit "
   echo
-  read -p " Choice: " choice
+  read -p " $Choice: " choice
   case $choice in
     1) information;;
     2) MENU;;
     0) EXITMENU;;
-    *) echo -e "$W [$R ERROR$W ]" && sleep 2
+    *) echo -e "$W [$R $error$W ]" && sleep 2
   esac
 
   main
@@ -92,25 +199,25 @@ function information {
   top
 
   echo
-  echo -e "$G   Name:$W.......AutoVPNBook"
+  echo -e "$G   Name:$W......AutoVPNBook"
   sleep 0.2
   echo -e "$G   Version:$W...1.1"
   sleep 0.2
-  echo -e "$G   Language:$W....[ENG]"
+  echo -e "$G   Language:$W..[ENG, FR, SPANISH]"
   sleep 0.2
-  echo -e "$G   Date:$W....$(date +"%m-%d-%y")"
+  echo -e "$G   Date:$W......$(date +"%m-%d-%y")"
   sleep 0.2
-  echo -e "$G   Author:$W...Ruped24 & K0RT3X-R00T"
+  echo -e "$G   Author:$W....Ruped24 & K0RT3X-R00T"
   sleep 0.2
   echo -e "$G   Type:$W......VPN"
   sleep 0.2
   echo -e "$G   Dev:$W.......Shell, Python "
   echo
   echo
-  echo -e " Automatic connection (servers OpenVPN)"
+  echo -e " $INFOMSG"
   echo
   sleep 0.5
-  echo -e " Return$R [ENTER]$W"
+  echo -e " $Return$R [$ENTER]$W"
   read pause
   main
 
@@ -119,7 +226,7 @@ function information {
 ###### INFO FIN ####################################################################
 
 
-######### GVPN ###########################################################
+######### MENU 2 ###########################################################
 
 function MENU {
 
@@ -129,27 +236,27 @@ function MENU {
 
   top
 
-  echo -e " $W$nar"
+  echo -e "   $W$nar"
   sleep 0.2
   echo -e "
-    $G 1)$W Installation
-    $G 2)$W Run AutoVPN
-    $R 0)$W Exit "
+    $G 1)$W $Inst
+    $G 2)$W $Rvpn
+    $R 0)$W $Exit "
   echo
-  read -p " Choice: " choice
+  read -p " $Choice: " choice
   case $choice in
     1) installation;;
     2) RUNVPN;;
     3) main;;
     0) EXITMENU;;
-    *) echo -e "$W [$R ERROR$W ]" && sleep 2
+    *) echo -e "$W [$R $error$W ]" && sleep 2
   esac
 
   MENU
 
 }
 
-######## GVPN END ######################################################
+######## MENU 2 END ######################################################
 
 
 ######## INSTALL ######################################################
@@ -173,7 +280,7 @@ function installation {
   [[ $(dpkg --list | grep pexpect) ]]
   if [[ $? -ne '0' ]]
   then
-    echo -e "Installing dependencies, please wait...\n"
+    echo -e "$Dep...\n"
     sudo apt-get -yq=2 install openvpn python-pexpect &> /dev/null
   fi
 
@@ -234,19 +341,19 @@ function RUNVPN {
 
   top
 
-  SERVERSLIST=$(ls *.ovpn 2> /dev/null |wc -l)
+  SERVERLIST=$(ls *.ovpn 2> /dev/null |wc -l)
 
   echo -e " Servers list"
   echo
-  echo -e "$G You have $SERVERSLIST OpenVPNBook Servers available.$EC\n"
+  echo -e "$G $Infoserv$W $SERVERLIST$G $Infoserv2$W"
   echo
   ls -x *.ovpn 2> /dev/null
   echo
-  read -p "Server: " SERV
+  read -p "$Server: " SERV
   clear
   top
   echo
-  echo -e "S T A R T I N G  S E R V E R"
+  echo -e "$START"
   echo
   sleep 0.5
   echo -e "$W [$Y?$W] Ctrl+c stop VPN"
@@ -255,13 +362,13 @@ function RUNVPN {
 
   if [[ ! -f "autovpnbook.py" ]]
   then
-    echo -e "\nautovpnbook.py file is missing!"
+    echo -e "$Fmissing"
     sleep 5
   fi
 
   if [[ ! $SERV ]]
   then
-    echo -e "\nEnter vpnbook-srv-proto.ovpn file to connect"
+    echo -e "$SRVincorSRVincor"
     sleep 2
   fi
 
@@ -269,7 +376,10 @@ function RUNVPN {
 
 }
 
+
 ##### RUN VPN END ###############################################################
+
+
 
 
 ##### Fonction Top ###############################################################
@@ -279,9 +389,9 @@ function top {
   clear
   echo
   sleep 0.1
-  echo -e " $W~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-  echo -e " $R A$W""utoVPNBook $GR v$G 1.1 "
-  echo -e " $W~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+  echo -e " $W~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+  echo -e " $R     A$W""utoVPNBook $GR v$G 1.1 "
+  echo -e " $W~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
   sleep 0.5
   echo
 
@@ -297,12 +407,12 @@ function EXITMENU {
   clear
   echo
   top
-  echo -e "$W C L O S I N G..."
+  echo -e "$CLOSE"
   sleep 2
   echo
   sleep 0.5
   echo
-  echo -e " [$R*$W] $G Thank you for using AutoVPNBook$W  [$R*$W]"
+  echo -e " [$R*$W] $G $OFF""$W   [$R*$W]"
   sleep 3
   clear
   exit
