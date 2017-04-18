@@ -2,44 +2,13 @@
 ## Automatically Login And Connect To VPNBook ##
 ***
 
-
-
-Dependencies:
-openvpn pexpect
-```
-#!bash
-
-sudo apt-get -y install openvpn python-pexpect
-```
-
-
 ## Step 1: ##
 * Download [autovpnbook repository](https://bitbucket.org/ruped24/autovpnbook/get/ef6d6d71b217.zip) and unzip.
 
 * Run **get_vpnbook_bundle.sh** to Download All [VPNBOOK](https://www.vpnbook.com/freevpn)'s Server OpenVPN Certificate Bundles.
  
- 
+* Setup and auto launches AutoVPNBook Menu.
 
-Usage: 
-```
-#!bash
-
-./get_vpnbook_bundle.sh
-```
-
-
-## Step 2: ##
-* Automatic login to vpnbook. No username or password required.
-
-* To properly terminate a session, press Ctrl+c.
-
-
-Usage: 
-```
-#!python
-
-sudo ./autovpnbook.py <vpnbook-file-proto.ovpn>
-```
 
 ##### Disclaimer: ######
 
