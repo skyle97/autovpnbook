@@ -1,24 +1,15 @@
 #! /bin/bash
 #
 # Written by Rupe
-# Get vpnbook OpenVpn Certificate Bundle
-# from vpnbook.com  v.1.1
+# Download and setup vpnbook OpenVpn Certificate Bundle v.1.1
 #
 
 cleanup() {
-  rm VPN*.zip && rm $0 && clear; echo -e "\n"; banner; echo -e \
-  "\033[1;32m$(date)  You have $(ls *.ovpn|wc -l) \
-OpenVPNBook Servers available.\033[0m\n"
-  ls --color
+  rm VPN*.zip && rm $0 && \
+  sudo ./avpnb.sh
 }
 
 trap cleanup Exit
-
-banner() {
-  echo   " / _\ / )( \(_  _)/  \ / )( \(  _ \(  ( \(  _ \ /  \  /  \(  / )"
-  echo   "/    \) \/ (  )( (  O )\ \/ / ) __//    / ) _ ((  O )(  O ))  ("
-  echo   "\_/\_/\____/ (__) \__/  \__/ (__)  \_)__)(____/ \__/  \__/(__\_)"
-}
 
 dwnld_cert_bundle() {
   wget -r -l1 -H -t1 -nd -N -np -A.zip -erobots=off \
