@@ -71,7 +71,6 @@ function setting {
         $G 2)$W French
         $G 3)$W Spanish "
 
-
       echo
       read -p" Choice: " choice
       echo ""
@@ -111,7 +110,7 @@ function english {
 function french {
 
   START="D E M A R R A G E  D U  S E R V E R"
-  OFF="Merci d'avoir utilisÃ© AutoVPNBook"
+  OFF="Merci d'avoir utilisé AutoVPNBook"
   CLOSE="$W F E R M E T U R E..."
   error="ERREUR"
   Fmissing="\nautovpnbook.py est absent!"
