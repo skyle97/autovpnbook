@@ -8,7 +8,7 @@
 * **get_vpnbook_bundle.sh** will download and setup All [VPNBOOK](https://www.vpnbook.com/freevpn)'s Server OpenVPN Certificate Bundles.
 
 ## Step 2: ##
-* Setup and auto launch AutoVPNBook Menu.
+* Setup and auto-launch AutoVPNBook Menu.
 ### Usage: ###
 ```
 #!bash
