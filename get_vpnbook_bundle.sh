@@ -57,6 +57,6 @@ dwnld_cert_bundle && \
 unpack_bundle && \
 auth_nocache && \
 get_username && \
-get_password && \
+get_password
 
 exit $?
