@@ -4,6 +4,12 @@
 # Download and setup vpnbook OpenVpn Certificate Bundle v.1.1
 #
 
+# Check for dependencies and install if missing
+[[ $(which openvpn) ]] && \
+[[ $(dpkg --list | grep pexpect) ]]
+[[ $? -ne '0' ]] && echo -e "Installing Dependencies, please wait...\n" && \
+sudo apt-get -yq=2 install openvpn python-pexpect &> /dev/null
+
 cleanup() {
   rm VPN*.zip && rm $0 && \
   sudo ./avpnb.sh
@@ -51,6 +57,6 @@ dwnld_cert_bundle && \
 unpack_bundle && \
 auth_nocache && \
 get_username && \
-get_password
+get_password && \
 
 exit $?
