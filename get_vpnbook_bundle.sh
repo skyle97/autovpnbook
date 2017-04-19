@@ -7,7 +7,8 @@
 # Check for dependencies and install if missing
 [[ $(which openvpn) ]] && \
 [[ $(dpkg --list | grep pexpect) ]]
-[[ $? -ne '0' ]] && echo -e "Installing Dependencies, please wait...\n" && \
+[[ $? -ne '0' ]] && echo -e "\nInstalling Dependencies, please wait...\n" && \
+sudo apt-get update -q=2 &> /dev/null && \
 sudo apt-get -yq=2 install openvpn python-pexpect &> /dev/null
 
 cleanup() {
