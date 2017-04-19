@@ -36,4 +36,4 @@ sudo ./avpnb.sh
 
 ###### These scripts are written for educational purposes only!
 
-** [Screenshot](https://drive.google.com/open?id=0B79r4wTVj-CZMlBhTnRwTUxUdDA) ** :wink:
+** [Screenshot](https://drive.google.com/open?id=0B79r4wTVj-CZNzBfOVpaRnRQMHc) ** :wink:
