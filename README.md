@@ -19,7 +19,7 @@
 ### Usage: ###
 
 
-* **avpnb.sh** launches AutoVPNBook Menu.
+* **avpnb.sh** will launch AutoVPNBook Menu.
 
 ```
 #!bash
